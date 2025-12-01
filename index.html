@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Wasshiiiiiii portfolio site</title>
+  <link rel="icon" type="images/.png" href="images/washi.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+
+
+
+    <!-- ローディング画面 -->
+    <div id="loading-screen">
+      <img src="images/washi.png" alt="Loading" id="loading-img">
+    </div>
+  
+  <!-- 背景の落下エリア -->
+  <div class="falling-area"></div>
+
+
+
+
+    <header>
+      <div class="header-container">
+        <!-- 左上：ロゴ （今は無き）-->
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.svg" alt="Wasshiiiiiiiのロゴ"></a>
+        </div>
+
+        <!-- 右上：ハンバーガーメニュー -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    
+      <!-- 右半分スライドメニュー -->
+      <nav class="side-menu" id="side-menu">
+        <ul>
+          <li><a href="index.html#top">HOME</a></li>
+          <li><a href="index.html#profile">PROFILE</a></li>
+          <li><a href="index.html#skill">SKILL</a></li>
+          <li><a href="works.html">WORKS</a></li>
+          <li><a href="index.html#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+
+    
+
+  <main>
+
+     <!-- Wasshiiiiiiiのトップ画像 -->
+      
+     <div class="top">
+        <div class="fade-up" id="top">
+           <h1><a href="index.html"><img src="images/logo.svg" alt="Wasshiiiiiiiのトップ画像"></a></h1>
+        </div>
+
+        <div class="scroll-down fade-up"> 
+          <a href="#profile">
+            <img src="images/scroll.png" alt="Scroll Down" class="scroll-circle">
+            <span class="arrow">⬇︎</span>
+          </a>
+        </div> 
+     </div>
+
+
+  
+   <!---  PROFILE   -->
+
+     <div class="profile width-small-contents" id="profile">
+        <div>
+            <h2>PROFILE</h2>
+           <p class="width-small-contents-p">ーわしについてー</p>
+        </div>
+
+        <div class="profile-people">
+              <div>
+                 <img src="images/washi2.jpg" alt="プロフィール画像">
+             </div>
+             <div>
+                  <h3>Wasshiiiiiii</h3>
+                  <p>北海道出身のイラストレーター兼WEBデザイナー。<br>この世で唯一無二な作品を作りたいという思いがあり、
+                    印象的で頭に残るデザインが好きです！目指しているのは、いろんな広告が並んでいる場所でも、目を惹く作品を作っていく事です。
+                    ちなみに、Wasshiiiiiii(ワッシー）という名前の由来は、一人称が「わし」だからです。「i」の数は7つになっており、
+                    クライアント様それぞれの特色や目指したい未来に合わせ、個性が活きる作品を作るという意味を込めました。
+
+                   <br><br>
+                   さあ、あなたもWasshiiiiiiiワールドへようこそ。<br></p>
+            </div>
+         </div>
+
+         <div class="profile-skill">
+              <h3>得意なこと3選</h3>
+              <div class="profile-slideshow">
+                  <div class="slides">
+                      <img src="images/profile-slider01.png" alt="目を惹くインパクトバツグンなデザイン">
+                      <img src="images/profile-slider02.png" alt="キャッチコピーを作るのが得意">
+                      <img src="images/profile-slider03.png" alt="色彩感覚を活かし、五感に訴える事">
+                  </div>
+                
+                  <div class="dots">
+                     <span class="dot active"></span>
+                     <span class="dot"></span>
+                     <span class="dot"></span>
+                  </div>
+              </div>
+
+            </div>
+     </div>
+   <!---  PROFILE  FINNISH  -->
+
+   <!--ニワトリの画像が右下に表示される-->
+   <a href="index.html#top">
+   <div id="back-to-top">
+    <div class="btn-wrapper">
+      <img src="images/niwatori.png" alt="にわとり" class="chicken-img">
+      <div class="circle-btn">
+        <span>↑</span>
+      </div>
+    　</div>
+ 　　 </div>
+　　　</a>
+　　　<!--ニワトリの画像が右下に表示される-->
+
+   <!---  SKILL   -->
+
+      <div class="skill width-small-contents" id="skill">
+         <div class="skill-title">
+             <h2>SKILL</h2>
+             <p class="width-small-contents-p">ーできることー</p>
+         </div>
+
+        <div class="skill-3items">
+            <div class="skill-item">
+                 <h4>Web Design</h4>
+                  <img src="images/design.png" alt="WEBデザイン"><br>
+                  <p><span>Illustrator/ Photoshop/ Figma</span></p>
+                  <p>UI/UXを考え、クライアント様に合った制作を行います。
+                     わしの作品は一見すると個性的なものが多く目立つと思いますが、シンプルなデザインがご希望であれば勿論それも出来ます。イメージに合わせて作成しますので、お気軽にご相談下さい。</p>
+             </div>
+
+             <div class="skill-item">
+                 <h4>Illustration</h4>
+                  <img src="images/niwatori.png" alt="イラストレーション"><br>
+                  <p><span>ibispaint</span></p>
+                  <p>お絵描きツールを使ってポップなキャラクターやイラストの作成を行えます。イラストのみの依頼も可能です。
+                    もしくは、ホームページ作成や広告作成の際に足りないパーツがあれば、オリジナルイラストで補うことも可能です。</p>
+             </div>
+
+             <div class="skill-item">
+                  <h4>Coding</h4>
+                  <img src="images/coding.png" alt="コーディング"><br>
+                   <p><span>HTML/CSS</span></p>
+                   <p>事前にお見せする、作成見本の通りに作成できるよう、丁寧にコーディングしていきます。
+                      また、ホームページ作成後もサイトの更新がしやすいよう、わかりやすく整理しながら入力する事を心掛けています。</p>
+             </div>
+
+             <div class="skill-contact">
+                <div class="skill-border">
+                    <h3>行える依頼の例</h3>
+
+                     <p>ホームページ制作、LP、バナー作成、広告(ポスター等)作成、お店のロゴ作成、名刺作成、マスコットキャラ制作、イラスト作成　など</p>
+                 </div>
+
+                 <div class="skill-info">
+                  <p><small>※納品については全て「データのみの納品」になります。
+                    印刷につきましては、お手数ですが、お客様ご自身で印刷もしくは、印刷会社に依頼いただいております。（どうしてもデータでの納品が不可な場合はご相談下さい。）
+                    
+                    また、納品後に印刷を行う場合、画面で見ている色と実際にインクで印刷した色とで、特性上若干の色味の差が出る場合がございます。あらかじめご了承ください。</small></p>
+                      
+                    <p><br><br>上記に記載がない場合も、お気軽にご相談下さい！</p>
+                      <div>
+                          <a href="index.html#contact" alt="Contact" class="skill-info-brock"><span>ご依頼はこちらから</span></a>
+                      </div>
+
+                      <br>
+                
+                 </div>
+             </div>
+          
+         </div>
+       
+    </div>
+   <!---  SKILL FINISH   -->
+
+
+
+    <!---  WORKS   -->
+
+    　　　<!---  ※ worksとskillの間に隙間作ってる奴なので、下は消さない。↓   -->
+    <div class="works-top width-large-contents" id="works">
+       <p><br></p>
+    </div>
+
+        <div class="works width-large-contents">
+          <div>
+              <h2>WORKS</h2>
+              <p class="width-small-contents-p">ー作ったものー</p>
+          </div>
+
+          <div class="works-slider">
+            <div class="works-slider-right">
+              <div class="slide-track">
+                <img src="images/portfolio06.jpg" alt="動物園の広告１">
+                <img src="images/portfolio07.jpg" alt="椅子の展覧会の広告１">
+                <img src="images/portfolio08.jpg" alt="レストランの広告１">
+                <img src="images/portfolio09.jpg" alt="レストランの広告２">
+                <!-- 繰り返し -->
+                <img src="images/portfolio06.jpg" alt="動物園の広告１">
+                <img src="images/portfolio07.jpg" alt="椅子の展覧会の広告１">
+                <img src="images/portfolio08.jpg" alt="レストランの広告１">
+                <img src="images/portfolio09.jpg" alt="レストランの広告２">
+              </div>
+            </div>
+          
+            <div class="works-slider-left">
+              <div class="slide-track">
+                <img src="images/portfolio01.jpg" alt="動物園の広告２">
+                <img src="images/portfolio02.jpg" alt="椅子の展覧会の広告２">
+                <img src="images/portfolio03.jpg" alt="椅子の展覧会の広告３">
+                <img src="images/portfolio04.jpg" alt="眼鏡屋さんの広告１">
+                <img src="images/portfolio05.jpg" alt="レストランの広告３">
+                <!-- 繰り返し -->
+                <img src="images/portfolio01.jpg" alt="動物園の広告２">
+                <img src="images/portfolio02.jpg" alt="椅子の展覧会の広告２">
+                <img src="images/portfolio03.jpg" alt="椅子の展覧会の広告３">
+                <img src="images/portfolio04.jpg" alt="眼鏡屋さんの広告１">
+                <img src="images/portfolio05.jpg" alt="レストランの広告３">
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <a href="works.html" alt="Works" class="works-brock"><span>View more</span></a>
+         </div>
+          
+      </div>
+   
+
+    <!---  WORKS FINISH   -->
+
+
+    <!---  CONTACT  -->
+
+     <div class="contact width-large-contents" id="contact">
+         <div>
+              <h2>CONTACT</h2>
+              <p class="width-small-contents-p">ー作ったものー</p>
+         </div>
+
+         <div class="contact-info">
+            <p>ご依頼やご質問は、下記のメールからお問い合わせください。</p>
+         </div>
+         <div>
+             <a href="mailto:〇〇〇〇.gmail.com
+　　　　　　　　　　　　　?subject=お問い合わせ
+　　　　　　　　　　　　　&body=以下の項目をご記入ください。%0D%0A%0D%0A
+　　　　　　　　　　　　　【氏名】：%0D%0A
+　　　　　　　　　　　　　【連絡先】：%0D%0A
+　　　　　　　　　　　　　【ご用件の内容】：%0D%0A"　alt="contact" class="contact-brock"><span>〇〇〇〇〇〇.gmail.com</span></a>
+                  </div>
+
+           <div> <p><small>お問い合わせの際は、【氏名】【連絡先】【ご用件の内容】を記載の上、ご連絡下さい。</small></p> </div>
+
+
+          <div class="contact-large-flex">
+           <div class="contact-flex">
+               <div class="icon">
+                   <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a>
+               </div>
+
+               <div class="icon">
+                   <a href="https://x.com/?lang=ja" target="_blank"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
+               </div>
+            </div>
+
+            <div class="contact-logo">
+               <img src="images/logo.svg" alt="コンタクトのロゴ">
+            </div>
+
+          </div>
+
+
+
+      </div>
+
+      
+
+     <!---  CONTACT FINISH   -->
+      
+  </main>
+  
+  
+
+    <script src="js/falling.js"></script>
+</body>
+</html>

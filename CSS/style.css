@@ -1,0 +1,1143 @@
+@charset "utf-8";
+
+/*  * { 
+  outline: solid 1px #ff0e0e;
+}  */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* 全体基本設定 */
+body {
+  margin: 0;
+  background: #ed9b20;
+  overflow-x: hidden; /* 横スクロール防止だけ残す */
+  font-family:sans-serif;
+  letter-spacing: 0.18em; /* 少し広げる */
+}
+
+p {
+  font-size: 21px;
+  font-family:Arial, Helvetica, sans-serif;
+  letter-spacing: 0.07em; /* 少し広げる */
+}
+
+                /* ProfileとSKILLの画面幅等の基本設定 */
+.width-small-contents {
+  position: relative;
+  z-index: 1; /* 背景より上 */
+  color: rgb(255, 255, 255);
+  margin: 0 auto;
+  max-width: 900px;  /* 少し細く中央寄せ */
+  padding: 100px 40px;
+  border-radius: 12px;
+  border: 12px solid #fff;
+  text-align: center;
+  font-family:Tahoma;
+  font-size: 30px;
+}
+
+                 /* worksとcontactの画面幅等の基本設定 */
+.width-large-contents {
+  position: relative;
+  z-index: 1; /* 背景より上 */
+  color: rgb(255, 255, 255);
+  margin: 0 auto;
+  padding: 100px 40px;
+  text-align: center;
+  font-family:Tahoma;
+  font-size: 30px;
+}
+.width-small-contents-p {
+  font-size: 15px;
+  color: rgb(194, 194, 194);
+  
+}
+
+/* ------   top   --------  */
+.top {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  text-align: center;
+  margin: 0 0 300px 0;
+}
+
+#top {
+  z-index: 1;
+}
+
+/* ロゴ画像を前面に */
+
+
+.top h1 {
+  position: relative; /* relative で z-index が効く */
+  z-index: 10;        /* 背景より前面 */
+  margin: 0;
+  padding-top: 150px;
+}
+
+.top h1 img {
+  width: 100%;
+  max-width: 1500px;
+  height: auto;
+}
+
+.scroll-down img {
+  width: 150px;
+  
+}
+
+/* ===== スクロールダウンボタン ===== */
+.scroll-down {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.scroll-down a {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.scroll-circle {
+  width: 100%;
+  height: auto;
+}
+
+/* スクロール画像を常時回転させる */
+.scroll-circle {
+  width: 100%;
+  height: auto;
+  animation: spin-circle 10s linear infinite;
+}
+
+@keyframes spin-circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* 矢印を中央に重ねる */
+.scroll-down .arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  color: #000000;
+  animation: bounce 1.5s infinite;
+  pointer-events: none;
+  
+}
+
+/* 矢印が上下にゆっくり動くアニメーション */
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, -45%); }
+  50% { transform: translate(-50%, -55%); }
+}
+
+/* ------   top  FINNISH  --------  */
+
+/* ローディング画面全体 */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ed9b20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200; /* 最前面 */
+}
+
+/* ローディングの回転アニメーション */
+#loading-img {
+  width: 150px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+/* 背景落下エリア：全画面共通 */
+.falling-area {
+  position: fixed;  /* ← これが大事！ */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0; /* 全部の背景になる */
+}
+
+/* 落下する画像の基本スタイル */
+.falling-item {
+  position: absolute;
+  top: -100px;
+  will-change: transform, opacity;
+  animation-name: fall;
+  animation-timing-function: linear;
+  filter: drop-shadow(4px 8px 6px rgba(0, 0, 0, 0.4)); /* ← 影を追加 */
+}
+
+
+
+
+
+/* 落下アニメーション */
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+
+
+
+ /*   ------ Header ------  */
+
+/* 全体のボックス計算を border + padding を含めるように */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ヘッダーコンテナ固定表示 */
+.header-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw; /* 画面幅いっぱいに */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 100px;
+  z-index: 1000;
+  overflow: hidden; /* はみ出さない */
+}
+
+/* ロゴ */
+.logo img {
+  max-height: 30px;
+  display: block;
+}
+
+/* ハンバーガー */
+.hamburger {
+  position: fixed;
+  top: 20px;    /* 上から20px */
+  right: 20px;  /* 右から20pxに寄せる */
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  background: #00568c;
+  border-radius: 50%;
+  padding: 15px;
+  box-sizing: border-box;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 40px;
+  height: 5px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+
+/* ハンバーガー開いたときのアニメーション */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* 右半分スライドメニュー */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -50%;
+  width: 30%;
+  height: 100%;
+  background: #00568c;
+  color: white;
+  transition: right 0.3s ease;
+  padding-top: 100px; /* ヘッダー分 */
+  z-index: 999;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.side-menu li {
+  margin-bottom: 20px;
+}
+
+.side-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.side-menu.open {
+  right: 0;
+}
+  /*   ------ Header  FINISSH -----*/
+
+
+
+
+   /* ----- profile ----- */
+
+.profile {
+  background:#00568c;
+}
+
+.profile-people img {
+  width: 350px;
+  padding-top: 30px;
+}
+.profile-people h3 {
+  padding:15px 0;
+}
+.profile-skill {
+  padding-top: 80px;
+}
+/* ========== スライドショー ========== */
+/* profile セクション内に収まるスライドショー */
+.profile-slideshow {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  height: 400px; /* 高さを指定する */
+}
+
+/* スライド画像 */
+.profile-slideshow .slides img {
+  position: absolute;  /* 重ねる */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;        /* 親の高さに合わせる */
+  object-fit: contain; /* はみ出さず中央に収まる */
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.profile-slideshow .slides img.active {
+  opacity: 1;
+}
+
+.profile-slideshow img {
+  background-color: none;
+
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slides img {
+  width: 100%;
+  height: auto; /* 高さを自動に */
+}
+
+/* ●ドット部分 */
+.dots {
+  position: absolute;
+  bottom: 20px;       /* 下から少し上げる */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;        /* 画像より前面 */
+  display: flex;
+  gap: 8px;           /* 丸い点の間隔 */
+}
+
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #fff;
+}
+
+ /* ----- profile FINNISH ----- */
+
+
+ /* ----- ニワトリボタン ----- */
+/* ボタンの固定位置 */
+#back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 9999;
+}
+
+/* 表示時 */
+#back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* （works.htmlにて）表示時 */
+#back-to-top-works {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 9999;
+}
+
+/* （works.htmlにて）表示時 */
+#back-to-top-works.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* にわとり＋丸ボタンのラッパー */
+.btn-wrapper {
+  position: relative;
+  width: 100px;   /* ← 90px → 130px に拡大 */
+  height: 180px;  /* 高さをしっかり確保 */
+}
+
+/* にわとり画像（上に置く） */
+.chicken-img {
+  width: 140px;   /* ← 80px → 120px に拡大 */
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;         /* いちばん上に配置 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  bottom: -10px;   /* ← ★ 距離をココで調整（もっと近づけ可） */
+}
+
+/* 丸ボタン（にわとりの下、中央に配置） */
+.circle-btn {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  border: 3px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: 50%;
+  bottom: -10px;     /* にわとりの下に重ねる高さ */
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* ↑ マーク */
+.circle-btn span {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  line-height: 1;
+}
+
+/* ホバー効果 */
+.circle-btn:hover {
+  transform: translateX(-50%) scale(1.05);
+  background: #f2f2f2;
+}
+
+
+/* ----- ニワトリボタン FINNISH ----- */
+
+
+
+/* ----- SKILL ----- */
+
+.skill {
+  background-color: #a51315;
+  margin-top: 220px;
+}
+
+.skill-title {
+  margin-bottom: 30px;
+}
+
+.skill-3items {
+  display: flex;
+  justify-content: space-between; /* 均等配置 */
+  flex-wrap: wrap; /* 幅が足りなければ折り返し */
+  gap: 20px; /* 要素の間隔 */
+  max-width: 900px; /* 枠内に収まるように */
+  margin: 0 auto; /* 中央寄せ */
+}
+
+.skill-item {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #000000;
+  padding: 35px 15px;
+  flex: 1 1 calc(33.333% - 40px); /* 3等分 - gap分 */
+  box-sizing: border-box; /* padding含めて幅計算 */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-item span {
+  font-size: 15px;
+  color: #a51315;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.skill-item p {
+  font-size: 15px;
+}
+
+.skill-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.skill-border {
+  margin:30px 0;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+.skill-contact p {
+  padding: 5px;
+  font-size: 18px;
+}
+
+.skill-info p {
+  font-size: 16px;
+}
+
+.skill-info-brock {
+  display: block;
+  position: relative;
+  overflow: hidden; /* ← 動く背景を角丸の中に閉じ込める */
+  background: #ffffff;
+  color: #a51315;
+  box-shadow: 6px 6px 7px #00000060;
+
+  font-size: 30px;
+  padding: 10px 30px;
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 40px;
+  text-decoration: none;
+  border: 3px solid #fff;
+
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* 背景として動く赤色のレイヤーを作る */
+.skill-info-brock::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%; /* ← 初期は右の外側 */
+  width: 100%;
+  height: 100%;
+  background: #880a0a;
+  transition: right 0.4s ease; /* ← 右→左の流れ */
+  z-index: 0;
+}
+
+/* hover時の動き */
+.skill-info-brock:hover::before,
+.skill-info-brock:active::before {
+  right: 0; /* ← 赤が左までスライドしてくる */
+}
+
+.skill-info-brock:hover,
+.skill-info-brock:active {
+  color: #ffffff; /* 文字が白に */
+  transform: scale(1.03); /* 少し大きく */
+}
+
+/* 文字を前面に */
+.skill-info-brock span {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-info span {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.skill-info small {
+  font-size: 14px;
+}
+
+ /* ----- SKILL FINNISH ----- */
+
+ /* ----- WORKS ----- */
+
+ .works-top {
+  background: url("../images/Washiiiiiii.png") repeat-x top;
+  position: relative;
+  margin: 250px 0;
+  z-index: 1;
+}
+
+.works {
+  margin: -350px auto 0 auto; /* 上に重ねる */
+  background-color: #000000;
+  position: relative;
+  z-index: 2;
+  padding: 100px 0;
+  text-align: center;
+}
+
+
+.works-slider {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 上下の間隔 */
+  padding:30px 0 50px 0;
+}
+
+.works-slider-right,
+.works-slider-left {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(200%); /* 2回分の画像を並べる */
+}
+
+.works-slider-right .slide-track {
+  animation: scroll-left 60s linear infinite;
+}
+
+.works-slider-left .slide-track {
+  animation: scroll-right 60s linear infinite;
+}
+
+/* 右スライダー：横長 */
+.works-slider-right .slide-track img {
+  width: 400px;      /* 横幅固定 */
+  height: auto;      /* 縦は自動 */
+  margin-right: 20px;
+}
+
+/* 左スライダー：縦長 */
+.works-slider-left .slide-track img {
+  width: 300px;      /* 横幅小さめ */
+  height: 420px;     /* 縦固定 */
+  margin-right: 20px;
+}
+
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+
+
+.works-brock {
+  display: block;
+  position: relative;
+  overflow: hidden; /* ← 動く背景を角丸の中に閉じ込める */
+  background: #ffffff;
+  color: #000000;
+  font-size: 30px;
+  padding: 10px 30px;
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 40px;
+  text-decoration: none;
+  border: 3px solid #fff;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* 背景として動く赤色のレイヤーを作る */
+.works-brock::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%; /* ← 初期は右の外側 */
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  transition: right 0.4s ease; /* ← 右→左の流れ */
+  z-index: 0;
+}
+
+/* hover時の動き */
+.works-brock:hover::before,
+.works-brock:active::before {
+  right: 0; /* ← 赤が左までスライドしてくる */
+}
+
+.works-brock:hover,
+.works-brock:active {
+  color: #ffffff; /* 文字が白に */
+  transform: scale(1.03); /* 少し大きく */
+}
+
+/* 文字を前面に */
+.works-brock span {
+  position: relative;
+  z-index: 1;
+}
+
+.works-brock span {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+  /* ----- WORKS FINNISH ----- */
+
+
+   /* ----- CONTACT  ----- */
+
+  .contact {
+    background-color: #00568c;
+  }
+
+  .contact-info {
+    padding-top: 40px;
+  }
+
+  .contact-info p {
+    font-size: 18px;
+  }
+  .contact-brock {
+    display: block;
+    position: relative;
+    overflow: hidden; /* ← 動く背景を角丸の中に閉じ込める */
+    background: #ffffff;
+    color: #00568c;
+    font-size: 30px;
+    padding: 10px 30px;
+    width: 400px;
+    margin: 20px auto;
+    border-radius: 40px;
+    text-decoration: none;
+    border: 3px solid #fff;
+    box-shadow: 6px 6px 7px #0000004f;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* 背景として動く赤色のレイヤーを作る */
+  .contact-brock::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -100%; /* ← 初期は右の外側 */
+    width: 100%;
+    height: 100%;
+    background:#004c7b;
+    transition: right 0.4s ease; /* ← 右→左の流れ */
+    z-index: 0;
+  }
+  
+  /* hover時の動き */
+  .contact-brock:hover::before,
+  .contact-brock:active::before {
+    right: 0; /* ← 赤が左までスライドしてくる */
+  }
+  
+  .contact-brock:hover,
+  .contact-brock:active {
+    color: #ffffff; /* 文字が白に */
+    transform: scale(1.03); /* 少し大きく */
+  }
+  
+  /* 文字を前面に */
+  .contact-brock span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .contact-brock span {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .contact p small {
+    font-size: 13px;
+  }
+  
+  .contact-large-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding:60px 0 0 0 ;
+  }
+
+  .contact-flex {
+    display: flex;
+  }
+
+  .icon {
+    font-size: 50px;
+    padding :0 5px ;
+  }
+
+  .contact-logo {
+    width:200px;
+  }
+   /* ----- CONTACT FINNISH ----- */
+
+
+
+    /*  ------スクロールアニメーション------ */
+
+/* 初期状態：少し下にずれて透明 */
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.0s ease-out, transform 1.0s ease-out;
+}
+
+/* 表示時 */
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+     /* ------スクロールアニメーション FINNISH ------ */
+
+
+
+
+/* ------   works.html   ------ */
+
+.works-main {
+  position: relative;
+  z-index: 1; /* 背景より上 */
+  color: rgb(255, 255, 255);
+  margin: 0 auto;
+  padding: 100px 40px;
+  text-align: center;
+  font-family:Tahoma;
+  font-size: 30px;
+}
+     .works-tabs {
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .tab-btn {
+      padding: 12px 25px;
+      margin: 0 10px;
+      font-size: 20px;
+      background: #000000;
+      border-radius: 8px;
+      border: 3px solid #ffffff;
+      color: #ffffff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .tab-btn.active {
+      background: #ffffff;
+      color: #000000;
+      transform: scale(1.2);
+    }
+    
+    .tab-content {
+      display: none;
+      background-color: #eaeaea;
+      padding: 50px 20px;
+      border-radius: 20px;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+
+    .popup-img-1 {
+      width:400px;
+    }
+    .popup-img-2 {
+      width:300px;
+    }
+
+    /* モーダル全体（背景の黒） */
+#img-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+}
+
+/* モーダルの中身 */
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 30px;
+  max-width: 90%;
+  max-height: 100%;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ポップアップ画像 */
+#modal-img {
+  width:400px;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 4px #0000004f;
+}
+
+/* 説明文 */
+#modal-desc {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #333;
+}
+
+/* 閉じるボタン */
+#modal-close {
+  position: absolute;
+  top: -15px;
+  right: 5px;
+  font-size: 40px;
+  cursor: pointer;
+  color: #000;
+}
+
+/* ふわっと出るアニメーション */
+@keyframes fadeIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+    
+
+    /* ------   works.html  FINNISH ------ */
+
+
+
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+
+  p {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 27px;
+  }
+  .falling-item {
+    width: 50px;
+    height: auto;
+  }
+
+  .top h1 {
+    padding: 250px 0 0 0 ;
+}
+
+/* ハンバーガーメニュー　*/
+  .hamburger {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+  }
+
+  .hamburger span {
+    width: 30px;
+    height: 4px;
+  }
+
+  /* ハンバーガーメニュー　FINNISH */
+
+  .profile-people img {
+    width: 80%;      /* スマホで小さく */
+    max-width: 250px;
+    padding-top: 20px;
+  }
+
+  .width-small-contents {
+    padding: 60px 20px;  /* スマホで余白少なめ */
+  }
+
+  .profile-slideshow {
+    width: 95%;     /* 幅を狭める */
+  }
+  .profile-slideshow img {
+    background-color: #000000;
+    border-radius: 20px;
+  }
+
+  .skill-3items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-item {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+
+  .skill-item p {
+    font-size: 20px;
+  }
+
+
+    /* ---ニワトリボタンーー */
+  .btn-wrapper {
+    position: relative;
+    width: 100px;   /* ← 90px → 130px に拡大 */
+    height: 180px;  /* 高さをしっかり確保 */
+  }
+  
+  /* にわとり画像（上に置く） */
+  .chicken-img {
+    width: 100px;   /* ← 80px → 120px に拡大 */
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;         /* いちばん上に配置 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    bottom: -10px;   /* ← ★ 距離をココで調整（もっと近づけ可） */
+  }
+
+  .circle-btn {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    border: 3px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    position: absolute;
+    left: 50%;
+    bottom: 33px;     /* にわとりの下に重ねる高さ */
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  /* ---ニワトリボタン　FINNISH ーー */
+
+  .works-slider-right .slide-track {
+    animation: scroll-left 20s linear infinite;
+  }
+  
+  .works-slider-left .slide-track {
+    animation: scroll-right 20s linear infinite;
+  }
+
+  .works-slider-right .slide-track img {
+    width: 300px;      /* 横幅固定 */
+    height: auto;      /* 縦は自動 */
+  }
+
+  .works-slider-left .slide-track img {
+    width: 200px;      /* 横幅小さめ */
+    height: 300px;     /* 縦固定 */
+}
+
+/* ---- works.html ---- */
+
+.popup-img-1 {
+  width:250px;
+}
+.popup-img-2 {
+  width:200px;
+}
+
+#modal-desc {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  color: #333;
+}
+
+
+/* ---- works.html FINISSH ---- */
+
+
+}
