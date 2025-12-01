@@ -25,6 +25,18 @@ p {
   letter-spacing: 0.07em; /* 少し広げる */
 }
 
+h2 {
+  font-family:Tahoma;
+}
+
+h3 {
+  font-family:Tahoma;
+}
+
+h4 {
+  font-family:Tahoma;
+}
+
                 /* ProfileとSKILLの画面幅等の基本設定 */
 .width-small-contents {
   position: relative;
@@ -340,6 +352,7 @@ p {
 }
 .profile-people h3 {
   padding:15px 0;
+  font-family:sans-serif;
 }
 .profile-skill {
   padding-top: 80px;
@@ -626,6 +639,7 @@ p {
 .skill-info span {
   font-size: 28px;
   font-weight: bold;
+  font-family:Tahoma;
 }
 
 .skill-info small {
@@ -753,9 +767,7 @@ p {
 .works-brock span {
   position: relative;
   z-index: 1;
-}
-
-.works-brock span {
+  font-family:Tahoma;
   font-size: 28px;
   font-weight: bold;
 }
@@ -777,6 +789,7 @@ p {
   .contact-info p {
     font-size: 18px;
   }
+  
   .contact-brock {
     display: block;
     position: relative;
@@ -823,9 +836,7 @@ p {
   .contact-brock span {
     position: relative;
     z-index: 1;
-  }
-  
-  .contact-brock span {
+    font-family:Tahoma;
     font-size: 24px;
     font-weight: bold;
   }
@@ -1000,7 +1011,7 @@ p {
 @media (max-width: 768px) {
 
   p {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   h3 {
@@ -1058,7 +1069,18 @@ p {
   }
 
   .skill-item p {
-    font-size: 20px;
+    font-size: 16px;
+  }
+
+  .skill-info-brock {
+    width: 300px;
+  }
+  .skill-info-brock span {
+    font-size: 22px;
+  }
+
+  .skill-info p {
+    font-size: 14px;
   }
 
 
@@ -1111,17 +1133,31 @@ p {
   }
 
   .works-slider-right .slide-track img {
-    width: 300px;      /* 横幅固定 */
+    width: 200px;      /* 横幅固定 */
     height: auto;      /* 縦は自動 */
   }
 
   .works-slider-left .slide-track img {
-    width: 200px;      /* 横幅小さめ */
-    height: 300px;     /* 縦固定 */
+    width: 150px;      /* 横幅小さめ */
+    height: auto;     /* 縦固定 */
 }
 
-/* ---- works.html ---- */
+.works-brock {
+  width: 300px;
+}
 
+.works-brock {
+  font-size: 22px;
+}
+
+.contact-brock {
+  width: 300px;
+}
+
+.contact-brock span {
+  font-size: 16px;
+}
+/* ---- works.html ---- */
 .popup-img-1 {
   width:250px;
 }
@@ -1135,8 +1171,6 @@ p {
   font-size: 13px;
   color: #333;
 }
-
-
 /* ---- works.html FINISSH ---- */
 
 
