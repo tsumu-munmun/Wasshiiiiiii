@@ -14,14 +14,14 @@ window.addEventListener("load", () => {
 
 // 落下画像リスト（順番に降る）
 const images = [
-  "images/niwatori.png",
-  "images/washi.png",
-  "images/ozi.png",
-  "images/Hiyoko.png",
-  "images/Azarasshy.png",
-  "images/kani.png",
-  "images/kuma-kanban.png",
-  "images/hato.png"
+  "images/niwatori.webp",
+  "images/washi.webp",
+  "images/ozi.webp",
+  "images/Hiyoko.webp",
+  "images/Azarasshy.webp",
+  "images/kani.webp",
+  "images/kuma-kanban.webp",
+  "images/hato.webp"
 ];
 
 const area = document.querySelector(".falling-area");
