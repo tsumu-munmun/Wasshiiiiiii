@@ -905,7 +905,8 @@ h4 {
     }
     
     .tab-btn {
-      padding: 12px 25px;
+      width:200px;
+      padding: 10px 10px;
       margin: 0 10px;
       font-size: 20px;
       background: #000000;
@@ -1158,6 +1159,14 @@ h4 {
   font-size: 16px;
 }
 /* ---- works.html ---- */
+
+.tab-btn {
+  width:120px;
+  padding: 10px 10px;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
 .popup-img-1 {
   width:250px;
 }
@@ -1171,6 +1180,15 @@ h4 {
   font-size: 13px;
   color: #333;
 }
+
+  /* モーダル画像をスマホ用に小さく */
+  #modal-img {
+    width: 85%;        /* 画面の90%にして収める */
+    max-width: 300px;  /* さらに上限を決める */
+    height: auto;
+  }
+}
+
 /* ---- works.html FINISSH ---- */
 
 
