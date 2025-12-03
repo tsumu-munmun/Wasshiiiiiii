@@ -639,7 +639,7 @@ h4 {
 .skill-info span {
   font-size: 28px;
   font-weight: bold;
-  font-family:Tahoma;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 .skill-info small {
@@ -767,7 +767,7 @@ h4 {
 .works-brock span {
   position: relative;
   z-index: 1;
-  font-family:Tahoma;
+  font-family:Arial, Helvetica, sans-serif;
   font-size: 28px;
   font-weight: bold;
 }
@@ -836,7 +836,7 @@ h4 {
   .contact-brock span {
     position: relative;
     z-index: 1;
-    font-family:Tahoma;
+    font-family:Arial, Helvetica, sans-serif;
     font-size: 24px;
     font-weight: bold;
   }
