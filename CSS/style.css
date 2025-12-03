@@ -26,15 +26,15 @@ p {
 }
 
 h2 {
-  font-family:Tahoma;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 h3 {
-  font-family:Tahoma;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 h4 {
-  font-family:Tahoma;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
                 /* ProfileとSKILLの画面幅等の基本設定 */
@@ -1038,6 +1038,16 @@ h4 {
     width: 30px;
     height: 4px;
   }
+
+  .side-menu {
+    width: 70%;
+    right: -100%;   /* 最初は画面外に隠す */
+  }
+
+  .side-menu.open {
+    right: 0;
+  }
+  
 
   /* ハンバーガーメニュー　FINNISH */
 
